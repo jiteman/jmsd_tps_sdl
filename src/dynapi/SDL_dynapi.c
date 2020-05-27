@@ -37,6 +37,12 @@
 #include "SDL_syswm.h"
 #include "SDL_vulkan.h"
 
+#if defined(WIN32) || defined(_WIN32) || defined(__CYGWIN__)
+	//
+#else
+    #include <stdio.h>
+#endif
+
 /* This is the version of the dynamic API. This doesn't match the SDL version
    and should not change until there's been a major revamp in API/ABI.
    So 2.0.5 adds functions over 2.0.4? This number doesn't change;
